@@ -12,9 +12,11 @@
 - (IBAction)workFlowShow:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *taskTittleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *headLabel;
-@property (weak, nonatomic) IBOutlet UILabel *createTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *taskSourceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *contentBtn;
 @property (weak, nonatomic) IBOutlet UIButton *workFlowBtn;
+@property (weak, nonatomic) IBOutlet UILabel *assignPeopleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *completeTimeLabel;
 @property (strong,nonatomic) TaskTodoInfo *taskTodoInfo;
 +(id)taskToCell;
 @end

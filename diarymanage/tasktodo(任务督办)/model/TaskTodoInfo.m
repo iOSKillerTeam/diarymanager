@@ -14,7 +14,9 @@
         
         self.taskTittle = dict[@"taskTittle"];
         self.head = dict[@"head"];
-        self.createTime = dict[@"createTime"];
+        self.taskSource = dict[@"taskSource"];
+        self.assignPeople = dict[@"assignPeople"];
+        self.completeTime = dict[@"completeTime"];
         
     }
     return self;

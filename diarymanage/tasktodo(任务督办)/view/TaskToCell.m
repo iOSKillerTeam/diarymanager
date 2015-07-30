@@ -28,7 +28,9 @@
 -(void)setTaskTodoInfo:(TaskTodoInfo *)taskTodoInfo{
     _taskTittleLabel.text = taskTodoInfo.taskTittle;
     _headLabel.text = taskTodoInfo.head;
-    _createTimeLabel.text = taskTodoInfo.createTime;
+    _taskSourceLabel.text = taskTodoInfo.taskSource;
+    _assignPeopleLabel.text = taskTodoInfo.assignPeople;
+    _completeTimeLabel.text = taskTodoInfo.completeTime;
 }
 - (IBAction)workFlowShow:(UIButton *)sender {
      WorkFlow *demoVC = [[WorkFlow alloc] initWithNibName:@"WorkFlow" bundle:[NSBundle mainBundle]];
