@@ -10,11 +10,13 @@
 #import "TaskTodoInfo.h"
 #import "TLAlertView.h"
 #import "WorkFlow.h"
+#import "BSContentShowController.h"
 @implementation TaskToCell
 
 +(id)taskToCell{
     return [[NSBundle mainBundle] loadNibNamed:@"TaskToCell" owner:nil options:nil][0];
 }
+
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -36,6 +38,12 @@
      WorkFlow *demoVC = [[WorkFlow alloc] initWithNibName:@"WorkFlow" bundle:[NSBundle mainBundle]];
     TLAlertView *alertView = [[TLAlertView alloc] initWithView:demoVC.view outsideClose:YES];
     [alertView show];
+    
+}
+
+- (IBAction)contentShow:(UIButton *)sender {
+    NSLog(@"点击按钮。。。");
+    [self.delegate taskToCellDelegateDelegateDidClickContentBtn:self :@"test"];
     
 }
 @end

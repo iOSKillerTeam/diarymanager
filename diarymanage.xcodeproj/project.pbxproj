@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1486221B6A09EB00484220 /* BSContentShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1486211B6A09EB00484220 /* BSContentShowController.m */; };
+		4F1486241B6A0A1100484220 /* BSContentShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1486231B6A0A1100484220 /* BSContentShow.xib */; };
 		5318F5491B5DC09E0002B637 /* SXTitleLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5318F5481B5DC09E0002B637 /* SXTitleLable.m */; };
 		53482B831B2FC53500F85BB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53482B821B2FC53500F85BB3 /* main.m */; };
 		53482B891B2FC53500F85BB3 /* diarymanage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53482B871B2FC53500F85BB3 /* diarymanage.xcdatamodeld */; };
@@ -127,6 +129,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F1486201B6A09EB00484220 /* BSContentShowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContentShowController.h; sourceTree = "<group>"; };
+		4F1486211B6A09EB00484220 /* BSContentShowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContentShowController.m; sourceTree = "<group>"; };
+		4F1486231B6A0A1100484220 /* BSContentShow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSContentShow.xib; sourceTree = "<group>"; };
 		5318F5471B5DC09E0002B637 /* SXTitleLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXTitleLable.h; sourceTree = "<group>"; };
 		5318F5481B5DC09E0002B637 /* SXTitleLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXTitleLable.m; sourceTree = "<group>"; };
 		53482B7D1B2FC53500F85BB3 /* diarymanage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diarymanage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -779,6 +784,8 @@
 				5368A6201B38F89700093484 /* BSTaskTodoController.m */,
 				5352D60C1B3A2E3100FA2FD0 /* WorkFlow.h */,
 				5352D60D1B3A2E3100FA2FD0 /* WorkFlow.m */,
+				4F1486201B6A09EB00484220 /* BSContentShowController.h */,
+				4F1486211B6A09EB00484220 /* BSContentShowController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -813,6 +820,7 @@
 			children = (
 				5368A6271B38F93800093484 /* TaskToCell.xib */,
 				5352D60A1B39ACB300FA2FD0 /* WorkFlow.xib */,
+				4F1486231B6A0A1100484220 /* BSContentShow.xib */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -928,6 +936,7 @@
 				5368A6031B384FBC00093484 /* post_type_bubble_travel.png in Resources */,
 				53482C111B3074C900F85BB3 /* setting.png in Resources */,
 				5352D5FD1B39862900FA2FD0 /* round2.png in Resources */,
+				4F1486241B6A0A1100484220 /* BSContentShow.xib in Resources */,
 				53482BF21B301AC200F85BB3 /* push.png in Resources */,
 				53482C281B3309CE00F85BB3 /* xzglhy.png in Resources */,
 				5368A6141B3853B000093484 /* post_type_bubble_zxgz@2x.png in Resources */,
@@ -998,6 +1007,7 @@
 				534D4F551B670D8C006253EB /* BSReportFormWebViewController.m in Sources */,
 				5382D44D1B392B1F00BB06D1 /* TaskTodoInfo.m in Sources */,
 				53482B891B2FC53500F85BB3 /* diarymanage.xcdatamodeld in Sources */,
+				4F1486221B6A09EB00484220 /* BSContentShowController.m in Sources */,
 				534D4F691B671AA1006253EB /* AppDelegate.m in Sources */,
 				53482C5A1B34567D00F85BB3 /* TLDemoViewController.m in Sources */,
 				53482BFA1B3051A300F85BB3 /* BSNavigationController.m in Sources */,
