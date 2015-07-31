@@ -48,6 +48,6 @@
     
     //通过通知实现跳转
     //发送通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushToContentShow" object:@"test"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushToContentShow" object:sender];
 }
 @end

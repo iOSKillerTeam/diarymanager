@@ -11,6 +11,8 @@
 @interface TaskTodoInfo : NSObject
 @property(strong,nonatomic) NSString *taskTittle;
 @property(strong,nonatomic) NSString *head;
+@property(strong,nonatomic) NSString *officeLeader;
+@property(strong,nonatomic) NSString *responsePeople;
 @property(strong,nonatomic) NSString *assignPeople;
 @property(strong,nonatomic) NSString *createTime;
 @property(strong,nonatomic) NSString *taskSource;

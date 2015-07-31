@@ -18,6 +18,19 @@
         self.assignPeople = dict[@"assignPeople"];
         self.completeTime = dict[@"completeTime"];
         
+        self.officeLeader = dict[@"officeLeader"];
+        self.responsePeople = dict[@"responsePeople"];
+        self.createTime = dict[@"createTime"];
+        self.department = dict[@"department"];
+        self.progress = dict[@"progress"];
+        self.taskOffice = dict[@"taskOffice"];
+        self.taskRecord = dict[@"taskRecord"];
+        self.taskUndertake = dict[@"taskUndertake"];
+        self.secretary = dict[@"secretary"];
+        self.taskContent = dict[@"taskContent"];
+        self.taskCompletion = dict[@"taskCompletion"];
+        self.backHistory = dict[@"backHistory"];
+        
     }
     return self;
 }
