@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-@class TaskToCell;
-@protocol TaskToCellDelegate<NSObject>
--(void)taskToCellDelegateDelegateDidClickContentBtn:(TaskToCell*)taskToCell :(NSString*) content;
-@end
+//@class TaskToCell;
+//@protocol TaskToCellDelegate<NSObject>
+//-(void)taskToCellDelegateDelegateDidClickContentBtn:(TaskToCell*)taskToCell :(NSString*) content;
+//@end
 @class TaskTodoInfo;
 @interface TaskToCell : UITableViewCell
 - (IBAction)workFlowShow:(UIButton *)sender;
-@property (weak,nonatomic) id<TaskToCellDelegate> delegate;
+//@property (weak,nonatomic) id<TaskToCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *taskTittleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *headLabel;
 @property (weak, nonatomic) IBOutlet UILabel *taskSourceLabel;

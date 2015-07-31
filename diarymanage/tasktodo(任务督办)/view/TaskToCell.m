@@ -43,7 +43,11 @@
 
 - (IBAction)contentShow:(UIButton *)sender {
     NSLog(@"点击按钮。。。");
-    [self.delegate taskToCellDelegateDelegateDidClickContentBtn:self :@"test"];
+    //调用自身代理方法并传递可用参数，为了让BSTaskTodoController调用代理方实现跳转（失效）
+    //[self.delegate taskToCellDelegateDelegateDidClickContentBtn:self :@"test"];
     
+    //通过通知实现跳转
+    //发送通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushToContentShow" object:@"test"];
 }
 @end

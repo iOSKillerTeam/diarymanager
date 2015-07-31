@@ -2,14 +2,14 @@
 //  BSContentShowController.m
 //  diarymanage
 //
-//  Created by wosinC on 15/7/30.
+//  Created by wosinC on 15/7/31.
 //  Copyright (c) 2015年 wuxinchao. All rights reserved.
 //
 
 #import "BSContentShowController.h"
 
-@interface BSContentShowController ()<UIScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet UIScrollView *contentShowScroll;
+@interface BSContentShowController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *contentShowScrollView;
 
 @end
 
@@ -17,11 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.contentShowScroll.showsHorizontalScrollIndicator = NO;
-    self.contentShowScroll.showsVerticalScrollIndicator = NO;
-    
-    self.contentShowScroll.contentSize = CGSizeMake(0, 320*3);
+    self.contentShowScrollView.showsHorizontalScrollIndicator = NO;
+    self.contentShowScrollView.showsVerticalScrollIndicator = NO;
+    self.contentShowScrollView.contentSize = CGSizeMake(0, 480*3);
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

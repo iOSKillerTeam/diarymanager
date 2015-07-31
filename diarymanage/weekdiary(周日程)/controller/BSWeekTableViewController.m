@@ -51,7 +51,7 @@
     [_leaderChooseView addSubview:_leaderChoosePiceker];
     leaders = @[@"张涛",@"吴岗",@"徐利根",@"王奇文",@"张建成",@"刘志勇",@"邹正宇",@"刘电文",@"吴炳泉",@"孙占辉",@"洪源平",@"仲卫东",@"郭志敏",@"周方国",@"黄志军",@"孔玉春",@"孔德萍",@"刘崇都",@"张兴田",@"张伟",@"张丽萍",@"洪潭",@"郑永祥",@"徐侃",@"姚翀",@"伍吉泽",@"石建新",@"朱晓斌",@"候英东"];
     
-    [self.view.superview.window addSubview:_leaderChooseView];
+    [self.view addSubview:_leaderChooseView];
     //[self.view.superview bringSubviewToFront:_leaderChooseView];
     
 }
