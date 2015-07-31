@@ -90,9 +90,9 @@
     _taskContentTittleLabel.textAlignment = UITextAlignmentRight;
     _taskContentTittleLabel.font = ContentShowTittleFont;
     
-    _secretaryLabel = [[UILabel alloc]init];
-    _secretaryLabel.font = ContentShowFont;
-    [_contentShowScrollView addSubview:self.secretaryLabel];
+    _taskContentLabel = [[UILabel alloc]init];
+    _taskContentLabel.font = ContentShowFont;
+    [_contentShowScrollView addSubview:self.taskContentLabel];
     
     /**
      * 完成情况说明
@@ -140,7 +140,25 @@
     _createTimeLabel.text = self.taskTodoInfo.createTime;
     _createTimeLabel.frame = CGRectMake(progressX, progressY+40, progressWidth, progressHeight);
     
+    _taskUndertakeLabel.text = self.taskTodoInfo.taskUndertake;
+    _taskUndertakeLabel.frame = CGRectMake(progressX, progressY+80, progressWidth, progressHeight);
+    
     _secretaryLabel.text = self.taskTodoInfo.secretary;
-    _createTimeLabel.frame = CGRectMake(progressX, progressY+80, progressWidth, progressHeight);
+    _secretaryLabel.frame = CGRectMake(progressX, progressY+120, progressWidth, progressHeight);
+    
+    //计算生成Frame的Label数据
+    _taskContentLabel.text = self.taskTodoInfo.taskContent;
+    [_taskContentLabel setLineBreakMode:NSLineBreakByWordWrapping];
+    _taskContentLabel.numberOfLines = 0;
+    CGFloat _taskContentTittleX = self.taskContentTittleLabel.x;
+    CGFloat _taskContentTittleY = self.taskContentTittleLabel.y;
+    CGFloat contentx = _taskContentTittleX+60;
+    CGFloat contenty = _taskContentTittleY + 40;
+    CGFloat contentWidth = self.view.width-76;
+    CGSize size = CGSizeMake(contentWidth,MAXFLOAT); //设置一个行高上限
+    NSDictionary *attribute = @{NSFontAttributeName: _taskContentLabel.font};
+    CGSize contentsize = [_taskContentLabel.text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
+    _taskContentLabel.frame = CGRectMake(contentx, contenty, contentWidth, contentsize.height);
+    
 }
 @end
