@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class BSWorkFlowInfo;
 @interface WorkFlow : UIViewController
 
+@property(strong,nonatomic) BSWorkFlowInfo* workFlowInfo;
 @end

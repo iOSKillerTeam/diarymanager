@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F2B99051B6B14B3009564CD /* BSContentShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B99031B6B14B3009564CD /* BSContentShowController.m */; };
 		4F2B99061B6B14B3009564CD /* BSContentShowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B99041B6B14B3009564CD /* BSContentShowController.xib */; };
+		4F9F19091B6CDC61003B000C /* BSWorkFlowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F19081B6CDC61003B000C /* BSWorkFlowInfo.m */; };
 		5318F5491B5DC09E0002B637 /* SXTitleLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5318F5481B5DC09E0002B637 /* SXTitleLable.m */; };
 		53482B831B2FC53500F85BB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53482B821B2FC53500F85BB3 /* main.m */; };
 		53482B891B2FC53500F85BB3 /* diarymanage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53482B871B2FC53500F85BB3 /* diarymanage.xcdatamodeld */; };
@@ -132,6 +133,8 @@
 		4F2B99021B6B14B3009564CD /* BSContentShowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContentShowController.h; sourceTree = "<group>"; };
 		4F2B99031B6B14B3009564CD /* BSContentShowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContentShowController.m; sourceTree = "<group>"; };
 		4F2B99041B6B14B3009564CD /* BSContentShowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSContentShowController.xib; path = ../controller/BSContentShowController.xib; sourceTree = "<group>"; };
+		4F9F19071B6CDC60003B000C /* BSWorkFlowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWorkFlowInfo.h; sourceTree = "<group>"; };
+		4F9F19081B6CDC61003B000C /* BSWorkFlowInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSWorkFlowInfo.m; sourceTree = "<group>"; };
 		5318F5471B5DC09E0002B637 /* SXTitleLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXTitleLable.h; sourceTree = "<group>"; };
 		5318F5481B5DC09E0002B637 /* SXTitleLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXTitleLable.m; sourceTree = "<group>"; };
 		53482B7D1B2FC53500F85BB3 /* diarymanage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diarymanage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -795,6 +798,8 @@
 			children = (
 				5382D44B1B392B1F00BB06D1 /* TaskTodoInfo.h */,
 				5382D44C1B392B1F00BB06D1 /* TaskTodoInfo.m */,
+				4F9F19071B6CDC60003B000C /* BSWorkFlowInfo.h */,
+				4F9F19081B6CDC61003B000C /* BSWorkFlowInfo.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1017,6 +1022,7 @@
 				53482B8C1B2FC53500F85BB3 /* ViewController.m in Sources */,
 				5368A6221B38F89700093484 /* BSTaskTodoController.m in Sources */,
 				53482C1D1B31180900F85BB3 /* WeiboCell.m in Sources */,
+				4F9F19091B6CDC61003B000C /* BSWorkFlowInfo.m in Sources */,
 				53482C0C1B30697F00F85BB3 /* BSWeekViewController.m in Sources */,
 				53482BC51B2FD8FB00F85BB3 /* CHTumblrMenuView.m in Sources */,
 				53482B831B2FC53500F85BB3 /* main.m in Sources */,
