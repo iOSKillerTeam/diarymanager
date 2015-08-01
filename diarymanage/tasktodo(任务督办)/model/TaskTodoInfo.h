@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface TaskTodoInfo : NSObject
+@property(strong,nonatomic) NSString *t_id;
 @property(strong,nonatomic) NSString *taskTittle;
 @property(strong,nonatomic) NSString *head;
 @property(strong,nonatomic) NSString *officeLeader;

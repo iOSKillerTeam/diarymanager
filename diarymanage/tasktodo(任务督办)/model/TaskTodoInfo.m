@@ -12,6 +12,7 @@
 -(id)initWithDict:(NSDictionary*) dict{
     if(self = [super init] ){
         
+        self.t_id = dict[@"t_id"];
         self.taskTittle = dict[@"taskTittle"];
         self.head = dict[@"head"];
         self.taskSource = dict[@"taskSource"];

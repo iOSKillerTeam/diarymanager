@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @class BSWorkFlowInfo;
 @interface WorkFlow : UIViewController
-
+@property(strong,nonatomic)NSString* task_id;
 @property(strong,nonatomic) BSWorkFlowInfo* workFlowInfo;
 @end
