@@ -25,6 +25,8 @@
 @property(strong,nonatomic) UILabel* taskUndertakeLabel;
 @property(strong,nonatomic) UILabel* secretaryTittleLabel;
 @property(strong,nonatomic) UILabel* secretaryLabel;
+@property(strong,nonatomic) UILabel* taskTittleLabel;
+@property(strong,nonatomic) UILabel* taskTittleTittleLabel;
 @property(strong,nonatomic) UILabel* taskContentTittleLabel;
 @property(strong,nonatomic) UILabel* taskContentLabel;
 @property(strong,nonatomic) UILabel* taskCompletionTittleLabel;
