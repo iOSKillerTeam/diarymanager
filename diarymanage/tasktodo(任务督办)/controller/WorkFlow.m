@@ -9,6 +9,7 @@
 #import "WorkFlow.h"
 
 @interface WorkFlow ()
+@property (weak, nonatomic) IBOutlet UIScrollView *workflowScrollView;
 
 @end
 
@@ -17,7 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.workflowScrollView.contentSize = CGSizeMake(0, 480*2);
+    [self addWorkFlow];
 }
 
+-(void)addWorkFlow{
+    
+}
 
 @end
