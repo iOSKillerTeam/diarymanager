@@ -34,8 +34,9 @@
     _assignPeopleLabel.text = taskTodoInfo.assignPeople;
     _completeTimeLabel.text = taskTodoInfo.completeTime;
 }
-- (IBAction)workFlowShow:(UIButton *)sender {
+- (IBAction)workFlowShow:(WorkFlowButton *)sender {
      WorkFlow *demoVC = [[WorkFlow alloc] initWithNibName:@"WorkFlow" bundle:[NSBundle mainBundle]];
+    demoVC.task_id = sender.task_id;
     TLAlertView *alertView = [[TLAlertView alloc] initWithView:demoVC.view outsideClose:YES];
     [alertView show];
     

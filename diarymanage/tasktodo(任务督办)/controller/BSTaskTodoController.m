@@ -52,7 +52,7 @@
     TaskTodoInfo* taskTodoInfo = [TaskTodoInfo taskTodoInfoWithDict:self.taskTodos[indexPath.row]];
     cell.taskTodoInfo = taskTodoInfo;
     
-    cell.workFlowBtn.tag = indexPath.row;
+    cell.workFlowBtn.task_id = taskTodoInfo.t_id;
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WorkFlowButton.h"
 //@class TaskToCell;
 //@protocol TaskToCellDelegate<NSObject>
 //-(void)taskToCellDelegateDelegateDidClickContentBtn:(TaskToCell*)taskToCell :(NSString*) content;
@@ -19,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *headLabel;
 @property (weak, nonatomic) IBOutlet UILabel *taskSourceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *contentBtn;
-@property (weak, nonatomic) IBOutlet UIButton *workFlowBtn;
+@property (weak, nonatomic) IBOutlet WorkFlowButton *workFlowBtn;
 @property (weak, nonatomic) IBOutlet UILabel *assignPeopleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *completeTimeLabel;
 @property (strong,nonatomic) TaskTodoInfo *taskTodoInfo;

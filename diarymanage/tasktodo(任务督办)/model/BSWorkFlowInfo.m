@@ -18,7 +18,7 @@
         self.opera_time = dict[@"opera_time"];
         self.opera_per = dict[@"opera_per"];
         self.next_opera_per = dict[@"next_opera_per"];
-        //一天的工作开始
+        
         
     }
     return self;
