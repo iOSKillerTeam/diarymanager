@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lVv-6Y-QBD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -324,96 +325,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K1r-Zz-xQQ">
-                                <rect key="frame" x="0.0" y="145" width="320" height="48"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xzglhy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hio-Zm-EEt">
-                                        <rect key="frame" x="20" y="4" width="40" height="40"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="行政管理会议" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xv0-Jo-eDt">
-                                        <rect key="frame" x="80" y="8" width="166" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CellArrow" translatesAutoresizingMaskIntoConstraints="NO" id="bV8-uA-2n5">
-                                        <rect key="frame" x="296" y="12" width="16" height="24"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sua-2m-UKf">
+                                <rect key="frame" x="0.0" y="99" width="320" height="332"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ify-Wg-6q9">
-                                <rect key="frame" x="0.0" y="213" width="320" height="48"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zxgz.png" translatesAutoresizingMaskIntoConstraints="NO" id="hPS-0T-jTj">
-                                        <rect key="frame" x="20" y="4" width="40" height="40"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="专项工作" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6l-kE-Rh1">
-                                        <rect key="frame" x="80" y="8" width="166" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CellArrow" translatesAutoresizingMaskIntoConstraints="NO" id="xlK-Gn-Cdk">
-                                        <rect key="frame" x="296" y="12" width="16" height="24"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RJA-dt-a2m">
-                                <rect key="frame" x="0.0" y="281" width="320" height="48"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dangqun.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xl7-4e-FFu">
-                                        <rect key="frame" x="20" y="4" width="40" height="40"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="党群会议" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdc-SG-NWy">
-                                        <rect key="frame" x="83" y="8" width="166" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CellArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Lqw-UQ-rhW">
-                                        <rect key="frame" x="296" y="12" width="16" height="24"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZA-Zw-8xY">
-                                <rect key="frame" x="0.0" y="349" width="320" height="48"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sclh.png" translatesAutoresizingMaskIntoConstraints="NO" id="Whe-et-1EL">
-                                        <rect key="frame" x="20" y="4" width="40" height="40"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="生产例会" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zP7-Ot-AkS">
-                                        <rect key="frame" x="80" y="8" width="166" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CellArrow" translatesAutoresizingMaskIntoConstraints="NO" id="cBE-gO-Wu7">
-                                        <rect key="frame" x="296" y="12" width="16" height="24"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQs-gq-j1c">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <color key="backgroundColor" red="0.2198216325" green="0.57250604100000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dhZ-57-i7C"/>
-                                </constraints>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BdE-Jo-2OG">
+                                <rect key="frame" x="0.0" y="64" width="320" height="37"/>
+                                <color key="backgroundColor" red="0.043656680980000001" green="0.66986062030000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Sua-2m-UKf" secondAttribute="bottom" constant="49" id="EbW-aS-hT0"/>
+                            <constraint firstItem="Sua-2m-UKf" firstAttribute="top" secondItem="YUo-9C-FWt" secondAttribute="bottom" constant="35" id="GDI-QD-5Cs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sua-2m-UKf" secondAttribute="trailing" constant="-16" id="GUT-0E-v0q"/>
+                            <constraint firstItem="Qhi-CG-TfT" firstAttribute="top" secondItem="Sua-2m-UKf" secondAttribute="bottom" id="PX5-a3-eKp"/>
+                            <constraint firstItem="BdE-Jo-2OG" firstAttribute="leading" secondItem="7uw-jX-IbC" secondAttribute="leadingMargin" constant="-16" id="VIs-dZ-Mho"/>
+                            <constraint firstItem="Sua-2m-UKf" firstAttribute="leading" secondItem="7uw-jX-IbC" secondAttribute="leadingMargin" constant="-16" id="XyE-O9-twb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BdE-Jo-2OG" secondAttribute="trailing" constant="-16" id="bUp-0a-ORg"/>
+                            <constraint firstItem="Qhi-CG-TfT" firstAttribute="top" secondItem="Sua-2m-UKf" secondAttribute="bottom" id="hiF-20-w3l"/>
+                            <constraint firstItem="Sua-2m-UKf" firstAttribute="top" secondItem="YUo-9C-FWt" secondAttribute="bottom" constant="35" id="lbj-Ui-aTz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="一周会表" id="iwd-4e-nEp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="AdministrationConference" destination="K1r-Zz-xQQ" id="UzF-0T-2KG"/>
-                        <outlet property="partyMeeting" destination="RJA-dt-a2m" id="uuf-eA-0bC"/>
-                        <outlet property="productMeeting" destination="LZA-Zw-8xY" id="XXw-Zi-H72"/>
-                        <outlet property="smallScrollView" destination="JQs-gq-j1c" id="MWY-85-Oom"/>
-                        <outlet property="specialWork" destination="Ify-Wg-6q9" id="JIZ-t3-nal"/>
+                        <outlet property="MeetingContentView" destination="Sua-2m-UKf" id="fjV-P1-pdv"/>
+                        <outlet property="smallScrollView" destination="BdE-Jo-2OG" id="NHn-7t-dtG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hn-zB-HfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -492,18 +429,14 @@
         <image name="YellowDownArrow" width="16" height="16"/>
         <image name="about.png" width="48" height="48"/>
         <image name="aweek.png" width="30" height="30"/>
-        <image name="dangqun.png" width="885" height="901"/>
         <image name="plan.png" width="30" height="28"/>
         <image name="push.png" width="48" height="48"/>
         <image name="renwuduban.png" width="30" height="30"/>
-        <image name="sclh.png" width="64" height="64"/>
         <image name="set.png" width="64" height="64"/>
         <image name="shiyongshouce.png" width="42" height="47"/>
         <image name="tongji.png" width="48" height="48"/>
         <image name="toomore.png" width="30" height="30"/>
         <image name="update.png" width="48" height="48"/>
-        <image name="xzglhy.png" width="64" height="64"/>
         <image name="zhouric.png" width="30" height="29"/>
-        <image name="zxgz.png" width="64" height="64"/>
     </resources>
 </document>

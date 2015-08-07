@@ -37,8 +37,9 @@
 
 -(void)addWorkFlow{
     for(int i=0;i<_workFlows.count;i++){
-        UIImageView *workStepImageView = [[UIImageView alloc]init];
+        //UIImageView *workStepImageView = [[UIImageView alloc]init];
         UIImageView *arrowImageView = [[UIImageView alloc]init];
+        UIButton *workStepImageView = [[UIButton alloc]init];
         CGFloat imageWidth = self.view.width/4;
         CGFloat imageHeight = imageWidth;
         
@@ -49,8 +50,13 @@
         if(i==0){
     
             UIImage* workStepImage = [UIImage imageNamed:@"round1.png"];
-            workStepImageView.image = workStepImage;
+            //workStepImageView.image = workStepImage;
+            //workStepImageView.frame = CGRectMake(20, 20, imageWidth, imageHeight);
+            //[self.workflowScrollView addSubview:workStepImageView];
+            [workStepImageView setImage:workStepImage forState:UIControlStateNormal];
             workStepImageView.frame = CGRectMake(20, 20, imageWidth, imageHeight);
+        
+            [workStepImageView addTarget:self action:@selector(stepOnClick:) forControlEvents:UIControlEventTouchUpInside];
             [self.workflowScrollView addSubview:workStepImageView];
             
             UIImage* arrowImage = [UIImage imageNamed:@"arrow1.png"];
@@ -96,12 +102,17 @@
             NSLog(@"------%@",operaTime);
             CGSize ropera_timeLabelSize= [operaTime sizeWithFont:ContentShowFont];//计算用户名称的尺寸
             ropera_timeLabel.frame = CGRectMake(5, CGRectGetMaxY(opera_timeTittleLabel.frame)+3, ropera_timeLabelSize.width, ropera_timeLabelSize.height);
+            workStepImageView.userInteractionEnabled = YES;
             
         }else if(i == _workFlows.count-1){
             if(i%2){
                 UIImage* workStepImage = [UIImage imageNamed:@"round4.png"];
-                workStepImageView.image = workStepImage;
+//                workStepImageView.image = workStepImage;
+//                workStepImageView.frame = CGRectMake(self.view.width-20-imageWidth, 20+imageHeight*(2*i), imageWidth, imageHeight);
+//                [self.workflowScrollView addSubview:workStepImageView];
+                [workStepImageView setImage:workStepImage forState:UIControlStateNormal];
                 workStepImageView.frame = CGRectMake(self.view.width-20-imageWidth, 20+imageHeight*(2*i), imageWidth, imageHeight);
+                [workStepImageView addTarget:self action:@selector(stepOnClick:) forControlEvents:UIControlEventTouchUpOutside];
                 [self.workflowScrollView addSubview:workStepImageView];
                 
                 UILabel *opera_perTittleLabel = [[UILabel alloc]init];
@@ -140,11 +151,14 @@
                 NSLog(@"------%@",operaTime);
                 CGSize ropera_timeLabelSize= [operaTime sizeWithFont:ContentShowFont];//计算用户名称的尺寸
                 ropera_timeLabel.frame = CGRectMake(workStepImageView.x-30, CGRectGetMaxY(opera_timeTittleLabel.frame)+3, ropera_timeLabelSize.width, ropera_timeLabelSize.height);
-                
+                workStepImageView.userInteractionEnabled = YES;
+               
             }else{
                 UIImage* workStepImage = [UIImage imageNamed:@"round4.png"];
-                workStepImageView.image = workStepImage;
-                workStepImageView.frame = CGRectMake(20, 20+imageHeight*(2*i), imageWidth, imageHeight);
+//                workStepImageView.image = workStepImage;
+//                workStepImageView.frame = CGRectMake(20, 20+imageHeight*(2*i), imageWidth, imageHeight);
+                [workStepImageView setImage:workStepImage forState:UIControlStateNormal];
+                workStepImageView.frame = CGRectMake(20, 20+imageHeight*(2*i), imageWidth, imageHeight);                [workStepImageView addTarget:self action:@selector(stepOnClick:) forControlEvents:UIControlEventTouchUpOutside];
                 [self.workflowScrollView addSubview:workStepImageView];
                 
                 UILabel *opera_perTittleLabel = [[UILabel alloc]init];
@@ -183,13 +197,18 @@
                 NSLog(@"------%@",operaTime);
                 CGSize ropera_timeLabelSize= [operaTime sizeWithFont:ContentShowFont];//计算用户名称的尺寸
                 ropera_timeLabel.frame = CGRectMake(5, CGRectGetMaxY(opera_timeTittleLabel.frame)+3, ropera_timeLabelSize.width, ropera_timeLabelSize.height);
+                workStepImageView.userInteractionEnabled = YES;
+                
             }
         }
         else{
             if(i%2){
                 UIImage* workStepImage = [UIImage imageNamed:@"round2.png"];
-                workStepImageView.image = workStepImage;
+//                workStepImageView.image = workStepImage;
+//                workStepImageView.frame = CGRectMake(self.view.width-20-imageWidth, 20+imageHeight*(2*i), imageWidth, imageHeight);
+                [workStepImageView setImage:workStepImage forState:UIControlStateNormal];
                 workStepImageView.frame = CGRectMake(self.view.width-20-imageWidth, 20+imageHeight*(2*i), imageWidth, imageHeight);
+                [workStepImageView addTarget:self action:@selector(stepOnClick:) forControlEvents:UIControlEventTouchUpOutside];
                 [self.workflowScrollView addSubview:workStepImageView];
                 
                 UIImage* arrowImage = [UIImage imageNamed:@"arrow2.png"];
@@ -235,11 +254,15 @@
                 NSLog(@"------%@",operaTime);
                 CGSize ropera_timeLabelSize= [operaTime sizeWithFont:ContentShowFont];//计算用户名称的尺寸
                 ropera_timeLabel.frame = CGRectMake(workStepImageView.x-30, CGRectGetMaxY(opera_timeTittleLabel.frame)+3, ropera_timeLabelSize.width, ropera_timeLabelSize.height);
-
+                workStepImageView.userInteractionEnabled = YES;
+                
             }else{
                 UIImage* workStepImage = [UIImage imageNamed:@"round3.png"];
-                workStepImageView.image = workStepImage;
+//                workStepImageView.image = workStepImage;
+//                workStepImageView.frame = CGRectMake(20, 20+imageHeight*(2*i), imageWidth, imageHeight);
+                [workStepImageView setImage:workStepImage forState:UIControlStateNormal];
                 workStepImageView.frame = CGRectMake(20, 20+imageHeight*(2*i), imageWidth, imageHeight);
+                [workStepImageView addTarget:self action:@selector(stepOnClick:) forControlEvents:UIControlEventTouchUpOutside];
                 [self.workflowScrollView addSubview:workStepImageView];
                 
                 UIImage* arrowImage = [UIImage imageNamed:@"arrow1.png"];
@@ -285,10 +308,15 @@
                 NSLog(@"------%@",operaTime);
                 CGSize ropera_timeLabelSize= [operaTime sizeWithFont:ContentShowFont];//计算用户名称的尺寸
                 ropera_timeLabel.frame = CGRectMake(5, CGRectGetMaxY(opera_timeTittleLabel.frame)+3, ropera_timeLabelSize.width, ropera_timeLabelSize.height);
+                workStepImageView.userInteractionEnabled = YES;
+                
             }
         }
         
     }
 }
 
+-(void)stepOnClick:(id)sender{
+    NSLog(@"这次总该OK了！");
+}
 @end

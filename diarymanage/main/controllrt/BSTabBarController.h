@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SKSplashView.h"
 
-@interface BSTabBarController : UITabBarController
+@interface BSTabBarController : UITabBarController<SKSplashDelegate>
 
 @end

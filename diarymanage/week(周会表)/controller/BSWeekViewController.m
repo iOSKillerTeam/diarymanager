@@ -9,39 +9,101 @@
 #import "BSWeekViewController.h"
 #import "BSMeetingTableViewController.h"
 #import "SXTitleLable.h"
-
-@interface BSWeekViewController()
+#import "UIView+Extension.h"
+#import "WeiboCell.h"
+#import "WeiboInfo.h"
+#define WXCColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+@interface BSWeekViewController()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIView *MeetingContentView;
+@property (strong,nonatomic) UITableView *tableVieweeting;
 @property (weak, nonatomic) IBOutlet UIScrollView *smallScrollView;
-@property (weak, nonatomic) IBOutlet UIView *AdministrationConference;
-@property (weak, nonatomic) IBOutlet UIView *specialWork;
-@property (weak, nonatomic) IBOutlet UIView *partyMeeting;
-@property (weak, nonatomic) IBOutlet UIView *productMeeting;
+//@property (weak, nonatomic) IBOutlet UIView *AdministrationConference;
+//@property (weak, nonatomic) IBOutlet UIView *specialWork;
+//@property (weak, nonatomic) IBOutlet UIView *partyMeeting;
+//@property (weak, nonatomic) IBOutlet UIView *productMeeting;
 @property (strong,nonatomic) NSString* tittleName;
 @property (strong,nonatomic) NSString* btnTag;
 @end
 
-@implementation BSWeekViewController
+@implementation BSWeekViewController{
+    float rowHeight;//用来取每行动态的行高
+    NSMutableArray* muarray;
+}
 -(void)viewDidLoad{
     
     self.smallScrollView.showsHorizontalScrollIndicator = NO;
     self.smallScrollView.showsVerticalScrollIndicator = NO;
     
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
-                                             initWithTarget:self action:@selector(meetingDetail:)];
-    UITapGestureRecognizer *tapRecognizer2 = [[UITapGestureRecognizer alloc]
-                                             initWithTarget:self action:@selector(meetingDetail2:)];
-    UITapGestureRecognizer *tapRecognizer3 = [[UITapGestureRecognizer alloc]
-                                             initWithTarget:self action:@selector(meetingDetail3:)];
-    UITapGestureRecognizer *tapRecognizer4 = [[UITapGestureRecognizer alloc]
-                                             initWithTarget:self action:@selector(meetingDetail4:)];
+//    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+//                                             initWithTarget:self action:@selector(meetingDetail:)];
+//    UITapGestureRecognizer *tapRecognizer2 = [[UITapGestureRecognizer alloc]
+//                                             initWithTarget:self action:@selector(meetingDetail2:)];
+//    UITapGestureRecognizer *tapRecognizer3 = [[UITapGestureRecognizer alloc]
+//                                             initWithTarget:self action:@selector(meetingDetail3:)];
+//    UITapGestureRecognizer *tapRecognizer4 = [[UITapGestureRecognizer alloc]
+ //                                            initWithTarget:self action:@selector(meetingDetail4:)];
     //tapRecognizer.cancelsTouchesInView = NO;
-    [_AdministrationConference addGestureRecognizer:tapRecognizer];
-    [_specialWork addGestureRecognizer:tapRecognizer2];
-    [_partyMeeting addGestureRecognizer:tapRecognizer3];
-    [_productMeeting addGestureRecognizer:tapRecognizer4];
+//    [_AdministrationConference addGestureRecognizer:tapRecognizer];
+//    [_specialWork addGestureRecognizer:tapRecognizer2];
+//    [_partyMeeting addGestureRecognizer:tapRecognizer3];
+//    [_productMeeting addGestureRecognizer:tapRecognizer4];
     
+    
+    
+    NSArray* array = @[@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"李志勇",@"startTime":@"2015年6月23日 09:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"职业技能鉴定国家题库（核工业分库）阶段性审查会",@"joinPeople":@"人力资源处，集团公司人力资源部级职业技能鉴定指导中心，题库建设专家组成员等",@"editPeople":@"李四",@"other":@"请大家准备好命题"},@{@"icon":@"icon.png",@"name":@"核安全局",@"startTime":@"2015年6月23日 13:30:00",@"endTime":@"2015年6月23日 15:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"秦三厂112大修核安全局临界检查后会议",@"joinPeople":@"方家山执照管理处邮件通知为主",@"editPeople":@"王五",@"other":@"请带好纸笔，会议期间不得接听电话"},@{@"icon":@"icon.png",@"name":@"张建成",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"王奇文",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"}];
+    muarray = [[NSMutableArray alloc] initWithCapacity:20];
+    for(int i=0;i<array.count;i++){
+        WeiboInfo* weibo = [[WeiboInfo alloc]initWithDictionary:array[i]];
+        [muarray addObject:weibo];
+    }
+    [self initTableViewMeeting];
     [self addLable];
 }
+-(void)initTableViewMeeting{
+    _tableVieweeting = [[UITableView alloc]init];
+    _tableVieweeting.delegate = self;
+    _tableVieweeting.dataSource = self;
+    _tableVieweeting.backgroundColor = WXCColor(211, 211, 211);
+    _tableVieweeting.allowsSelection = NO;//将CELL设置成不可选中
+    _tableVieweeting.frame = CGRectMake(0, 0, self.view.width, self.view.height-_MeetingContentView.y);
+    NSLog(@"-----%f",_MeetingContentView.height);
+    [_MeetingContentView addSubview:_tableVieweeting];
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString* CellIdentifier = @"Cell";
+    //1,从缓存池中取出可利用的cell
+    WeiboCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    //2，如果缓存池中没有（第一次进入）那么就创建出这几个Cell
+    if(cell == nil){
+        //创建Cell时给每个Cell添加一个reuseIdentifier，便于下次从缓存池中找到我们要用的cell去创建
+        cell = [[WeiboCell alloc] initWithStyle:UITableViewCellStyleDefault         reuseIdentifier:CellIdentifier];
+    }
+    cell.weiboInfo = muarray[indexPath.row];
+    rowHeight = cell.cellHeight;//cell中得rowHeight已经保存了最后所得得行高
+    return cell;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    //NSLog(@"rows = %lu",(unsigned long)muarray.count);
+    
+    return muarray.count;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    //NSLog(@"行高-----%f",rowHeight);
+    
+    return rowHeight;
+}
+
+
+
 
 /** 添加标题栏 */
 - (void)addLable
@@ -85,6 +147,7 @@
 /** 标题栏label的点击事件 */
 - (void)lblClick:(UITapGestureRecognizer *)recognizer
 {
+    NSLog(@"自己进来了");
     if(_btnTag != nil){
         int tag = [_btnTag integerValue];
         SXTitleLable *oldTitlelable = (SXTitleLable*)[self.smallScrollView viewWithTag:tag];
@@ -95,63 +158,9 @@
     SXTitleLable *titlelable = (SXTitleLable *)recognizer.view;
     titlelable.textColor = [UIColor redColor];
     titlelable.font = [UIFont systemFontOfSize:24];
-    _btnTag = [NSString stringWithFormat:@"%d",titlelable.tag];
+    _btnTag = [NSString stringWithFormat:@"%ld",(long)titlelable.tag];
 }
 
 
-/** 正在滚动 */
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    // 取出绝对值 避免最左边往右拉时形变超过1
-    CGFloat value = ABS(scrollView.contentOffset.x / scrollView.frame.size.width);
-    NSUInteger leftIndex = (int)value;
-    NSUInteger rightIndex = leftIndex + 1;
-    CGFloat scaleRight = value - leftIndex;
-    CGFloat scaleLeft = 1 - scaleRight;
-    SXTitleLable *labelLeft = self.smallScrollView.subviews[leftIndex];
-    labelLeft.scale = scaleLeft;
-    // 考虑到最后一个板块，如果右边已经没有板块了 就不在下面赋值scale了
-    if (rightIndex < self.smallScrollView.subviews.count) {
-        SXTitleLable *labelRight = self.smallScrollView.subviews[rightIndex];
-        labelRight.scale = scaleRight;
-    }
-    
-}
-
--(void)meetingDetail:(UITapGestureRecognizer*)sender{
-    BSMeetingTableViewController *mettingTVC = [[BSMeetingTableViewController alloc] init];
-    _tittleName = @"行政管理会议";
-    self.navigationController.title = @"行政管理";
-    [self.navigationController pushViewController:mettingTVC animated:YES];
-}
-
--(void)meetingDetail2:(UITapGestureRecognizer*)sender{
-    BSMeetingTableViewController *mettingTVC = [[BSMeetingTableViewController alloc] init];
-    _tittleName = @"专项工作";
-    self.navigationController.title = @"专项工作";
-    [self.navigationController pushViewController:mettingTVC animated:YES];
-}
-
--(void)meetingDetail3:(UITapGestureRecognizer*)sender{
-    BSMeetingTableViewController *mettingTVC = [[BSMeetingTableViewController alloc] init];
-    _tittleName = @"党群会议";
-    self.navigationController.title = @"党群会议";
-    [self.navigationController pushViewController:mettingTVC animated:YES];
-}
-
--(void)meetingDetail4:(UITapGestureRecognizer*)sender{
-    BSMeetingTableViewController *mettingTVC = [[BSMeetingTableViewController alloc] init];
-    _tittleName = @"生产例会";
-    
-    self.navigationController.title = @"生产例会";
-    [self.navigationController pushViewController:mettingTVC animated:YES];
-}
-
-//往目标控制器传递数据(顺传)
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    //segue有三个属性：1来源控制器，2identity，3目标控制器
-    NSLog(@"进来啦！！！");
-    [segue.destinationViewController setTitle:_tittleName];
-}
 
 @end

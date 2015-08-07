@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-0n-qDi">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-0n-qDi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="就秦一厂人员违反工作组织过程进行作业事件做好经验反馈和状态报告的开发" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOk-CC-TMs">
@@ -73,10 +74,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cv5-1a-2mV">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cv5-1a-2mV">
                         <rect key="frame" x="0.0" y="199" width="320" height="42"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Pj-Y9-LWO">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Pj-Y9-LWO">
                                 <rect key="frame" x="50" y="6" width="60" height="30"/>
                                 <state key="normal" title="内容查看">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,7 +87,7 @@
                                     <action selector="contentShow:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="97i-IC-gry"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1g-up-6a9" customClass="WorkFlowButton">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1g-up-6a9" customClass="WorkFlowButton">
                                 <rect key="frame" x="210" y="6" width="60" height="30"/>
                                 <state key="normal" title="流程跟踪">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,19 +97,35 @@
                                     <action selector="workFlowShow:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dkJ-dm-eYK"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timeline_card_bottom_line_highlighted" translatesAutoresizingMaskIntoConstraints="NO" id="0dJ-qa-DCb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="timeline_card_bottom_line_highlighted" translatesAutoresizingMaskIntoConstraints="NO" id="0dJ-qa-DCb">
                                 <rect key="frame" x="158" y="6" width="1" height="30"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timeline_icon_comment" translatesAutoresizingMaskIntoConstraints="NO" id="8Ce-0d-FFb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="timeline_icon_comment" translatesAutoresizingMaskIntoConstraints="NO" id="8Ce-0d-FFb">
                                 <rect key="frame" x="17" y="8" width="25" height="25"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timeline_icon_retweet" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-on-6FB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="timeline_icon_retweet" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-on-6FB">
                                 <rect key="frame" x="177" y="8" width="25" height="25"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b1g-up-6a9" firstAttribute="leading" secondItem="b9J-on-6FB" secondAttribute="trailing" constant="8" id="0yO-Fs-Dc6"/>
+                            <constraint firstItem="7Pj-Y9-LWO" firstAttribute="leading" secondItem="8Ce-0d-FFb" secondAttribute="trailing" constant="8" id="EEs-xV-MNO"/>
+                            <constraint firstAttribute="trailing" secondItem="0dJ-qa-DCb" secondAttribute="trailing" constant="161" id="GD0-aa-Wyb"/>
+                            <constraint firstItem="0dJ-qa-DCb" firstAttribute="leading" secondItem="7Pj-Y9-LWO" secondAttribute="trailing" constant="48" id="Hd1-1U-8WF"/>
+                            <constraint firstItem="b9J-on-6FB" firstAttribute="leading" secondItem="0dJ-qa-DCb" secondAttribute="trailing" constant="18" id="Jri-m2-RBg"/>
+                            <constraint firstItem="0dJ-qa-DCb" firstAttribute="leading" secondItem="Cv5-1a-2mV" secondAttribute="leading" constant="158" id="T9W-uH-iQ6"/>
+                        </constraints>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Cv5-1a-2mV" secondAttribute="trailing" constant="-8" id="88z-iZ-ESR"/>
+                    <constraint firstItem="MDh-0n-qDi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="O2V-O9-kO1"/>
+                    <constraint firstItem="Cv5-1a-2mV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="WDW-Zh-D63"/>
+                    <constraint firstItem="Cv5-1a-2mV" firstAttribute="top" secondItem="MDh-0n-qDi" secondAttribute="bottom" constant="1" id="XB5-g2-tOY"/>
+                    <constraint firstItem="MDh-0n-qDi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="exc-QH-Q2w"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="MDh-0n-qDi" secondAttribute="trailing" constant="-8" id="n2H-Ul-2gD"/>
+                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
             <connections>

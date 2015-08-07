@@ -58,7 +58,7 @@
 //初始化工作计划内容
 -(void)initPlanView:(NSArray*)array{
     UITableView *planView = [[UITableView alloc]init];
-    planView.frame = CGRectMake(0, 64, 320, 367);
+    planView.frame = CGRectMake(0, 64, self.view.width, self.view.height-64);
     [self.view addSubview:planView];
     [self.view bringSubviewToFront:self.contentView];
     planView.delegate = self;
