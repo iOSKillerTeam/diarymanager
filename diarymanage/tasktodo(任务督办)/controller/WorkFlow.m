@@ -56,7 +56,7 @@
             [workStepImageView setImage:workStepImage forState:UIControlStateNormal];
             workStepImageView.frame = CGRectMake(20, 20, imageWidth, imageHeight);
         
-            [workStepImageView addTarget:self action:@selector(stepOnClick:) forControlEvents:UIControlEventTouchUpInside];
+//            [workStepImageView addTarget:self action:@selector(stepOnClick:) forControlEvents:UIControlEventTouchUpInside];
             [self.workflowScrollView addSubview:workStepImageView];
             
             UIImage* arrowImage = [UIImage imageNamed:@"arrow1.png"];
@@ -316,7 +316,7 @@
     }
 }
 
--(void)stepOnClick:(id)sender{
-    NSLog(@"这次总该OK了！");
-}
+//-(void)stepOnClick:(id)sender{
+//    NSLog(@"这次总该OK了！");
+//}
 @end

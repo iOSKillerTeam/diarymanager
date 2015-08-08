@@ -69,7 +69,14 @@
     
     TaskTodoInfo* taskTodoInfo = [TaskTodoInfo taskTodoInfoWithDict:self.taskTodos[obj.tag]];
     contentShowController.taskTodoInfo = taskTodoInfo;
-    [self.navigationController pushViewController:contentShowController animated:YES];
+    
+    [self.navigationController pushViewController:contentShowController animated:NO];
+    
+    CATransition *tran=[CATransition animation];
+    tran.duration=1.2;
+    tran.type=@"rippleEffect";
+    tran.subtype=kCATransitionFromLeft;
+    [self.navigationController.view.layer addAnimation:tran forKey:nil];
 }
 
 /**

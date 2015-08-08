@@ -346,7 +346,9 @@
                             <constraint firstItem="Sua-2m-UKf" firstAttribute="top" secondItem="YUo-9C-FWt" secondAttribute="bottom" constant="35" id="lbj-Ui-aTz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="一周会表" id="iwd-4e-nEp"/>
+                    <navigationItem key="navigationItem" title="一周会表" id="iwd-4e-nEp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="3tN-ZD-Grk"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="MeetingContentView" destination="Sua-2m-UKf" id="fjV-P1-pdv"/>
