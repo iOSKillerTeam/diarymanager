@@ -17,6 +17,8 @@
 		4F9BEC591B71F6420094B780 /* TLDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BEC571B71F6420094B780 /* TLDemoViewController.xib */; };
 		4F9E49F31B6D9C7700850390 /* WorkFlowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E49F21B6D9C7700850390 /* WorkFlowButton.m */; };
 		4F9F19091B6CDC61003B000C /* BSWorkFlowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F19081B6CDC61003B000C /* BSWorkFlowInfo.m */; };
+		4FD664F71B784BB600576F3C /* BSContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD664F51B784BB600576F3C /* BSContentViewController.m */; };
+		4FD664FB1B784FD700576F3C /* ZIOMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD664FA1B784FD700576F3C /* ZIOMenuView.m */; };
 		4FF9EB1E1B7445A6008A6958 /* ying.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FF9EB1C1B7445A6008A6958 /* ying.png */; };
 		4FF9EB1F1B7445A6008A6958 /* ying2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FF9EB1D1B7445A6008A6958 /* ying2.png */; };
 		4FF9EB211B746E1A008A6958 /* bg3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4FF9EB201B746E1A008A6958 /* bg3.jpg */; };
@@ -151,6 +153,10 @@
 		4F9E49F21B6D9C7700850390 /* WorkFlowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkFlowButton.m; path = ../controller/WorkFlowButton.m; sourceTree = "<group>"; };
 		4F9F19071B6CDC60003B000C /* BSWorkFlowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWorkFlowInfo.h; sourceTree = "<group>"; };
 		4F9F19081B6CDC61003B000C /* BSWorkFlowInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSWorkFlowInfo.m; sourceTree = "<group>"; };
+		4FD664F41B784BB600576F3C /* BSContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContentViewController.h; sourceTree = "<group>"; };
+		4FD664F51B784BB600576F3C /* BSContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContentViewController.m; sourceTree = "<group>"; };
+		4FD664F91B784FD700576F3C /* ZIOMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZIOMenuView.h; sourceTree = "<group>"; };
+		4FD664FA1B784FD700576F3C /* ZIOMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZIOMenuView.m; sourceTree = "<group>"; };
 		4FF9EB1C1B7445A6008A6958 /* ying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ying.png; sourceTree = "<group>"; };
 		4FF9EB1D1B7445A6008A6958 /* ying2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ying2.png; sourceTree = "<group>"; };
 		4FF9EB201B746E1A008A6958 /* bg3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg3.jpg; sourceTree = "<group>"; };
@@ -819,6 +825,8 @@
 				5352D60D1B3A2E3100FA2FD0 /* WorkFlow.m */,
 				4F2B99021B6B14B3009564CD /* BSContentShowController.h */,
 				4F2B99031B6B14B3009564CD /* BSContentShowController.m */,
+				4FD664F41B784BB600576F3C /* BSContentViewController.h */,
+				4FD664F51B784BB600576F3C /* BSContentViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -844,6 +852,8 @@
 		5368A61E1B38F50D00093484 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4FD664F91B784FD700576F3C /* ZIOMenuView.h */,
+				4FD664FA1B784FD700576F3C /* ZIOMenuView.m */,
 				4F9E49F11B6D9C7700850390 /* WorkFlowButton.h */,
 				4F9E49F21B6D9C7700850390 /* WorkFlowButton.m */,
 				5368A6251B38F93800093484 /* TaskToCell.h */,
@@ -1036,6 +1046,7 @@
 				53482C1A1B3117F600F85BB3 /* WeiboInfo.m in Sources */,
 				53482BF71B301CFC00F85BB3 /* TeamFollowButton.m in Sources */,
 				5352D61F1B3A911200FA2FD0 /* MBProgressHUD+NJ.m in Sources */,
+				4FD664FB1B784FD700576F3C /* ZIOMenuView.m in Sources */,
 				5352D61E1B3A911200FA2FD0 /* Heroinfo.m in Sources */,
 				5368A6281B38F93800093484 /* TaskToCell.m in Sources */,
 				53482C3D1B33E55400F85BB3 /* BSWeekTableViewController.m in Sources */,
@@ -1057,6 +1068,7 @@
 				53482C201B31187700F85BB3 /* BSMeetingTableViewController.m in Sources */,
 				5352D60E1B3A2E3100FA2FD0 /* WorkFlow.m in Sources */,
 				53482C3A1B33E4CA00F85BB3 /* TLAlertView.m in Sources */,
+				4FD664F71B784BB600576F3C /* BSContentViewController.m in Sources */,
 				53482B8C1B2FC53500F85BB3 /* ViewController.m in Sources */,
 				5368A6221B38F89700093484 /* BSTaskTodoController.m in Sources */,
 				53482C1D1B31180900F85BB3 /* WeiboCell.m in Sources */,

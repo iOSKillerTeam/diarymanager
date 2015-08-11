@@ -10,6 +10,7 @@
 #import "TaskTodoInfo.h"
 #import "TaskToCell.h"
 #import "BSContentShowController.h"
+#import "BSContentViewController.h"
 @interface BSTaskTodoController ()
 //@interface BSTaskTodoController ()<TaskToCellDelegate>
 @property (strong,nonatomic) NSArray* taskTodos;
@@ -64,19 +65,19 @@
     
      UIButton* obj = [notification object];//获取到传递的对象
     
-    BSContentShowController* contentShowController = [[BSContentShowController alloc]init];
+    BSContentViewController *contentShowController = [[BSContentViewController alloc]init];
     self.navigationController.title = @"任务查看";
     
     TaskTodoInfo* taskTodoInfo = [TaskTodoInfo taskTodoInfoWithDict:self.taskTodos[obj.tag]];
     contentShowController.taskTodoInfo = taskTodoInfo;
     
-    [self.navigationController pushViewController:contentShowController animated:NO];
+    [self.navigationController pushViewController:contentShowController animated:YES];
     
-    CATransition *tran=[CATransition animation];
-    tran.duration=1.2;
-    tran.type=@"rippleEffect";
-    tran.subtype=kCATransitionFromLeft;
-    [self.navigationController.view.layer addAnimation:tran forKey:nil];
+//    CATransition *tran=[CATransition animation];
+//    tran.duration=0.75;
+//    tran.type=@"cube";
+//    tran.subtype=kCATransitionFromLeft;
+//    [self.navigationController.view.layer addAnimation:tran forKey:nil];
 }
 
 /**
