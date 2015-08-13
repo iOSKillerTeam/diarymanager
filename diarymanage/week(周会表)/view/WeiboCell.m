@@ -33,7 +33,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
         
-        //清楚cell的默认颜色
+        //清除cell的默认颜色
         self.backgroundColor = [UIColor clearColor];
         //点击cell的时候不要变色
         self.selectionStyle = UITableViewCellSelectionStyleNone;

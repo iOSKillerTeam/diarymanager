@@ -41,6 +41,9 @@
     NSMutableArray* muarray;
 }
 -(void)viewDidLoad{
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     _leaders = @[@"张涛",@"王奇文",@"吴炳泉",@"张建成",@"张海伦",@"张三",@"李四",@"王五",@"张三",@"伍吉泽",@"赵六",@"葛斌",@"王洪波",@"张智尧",@"李娜",@"刘翔",@"马云",@"王思聪",@"方家山",@"钱小六",@"张尼玛",@"姚翀",@"纵骋",@"郝斌",@"王力宏",@"王海波",@"赵钱孙",@"测试"];
     _downLeaderBtns = [NSMutableArray arrayWithArray:_leaders];
     /** 整个下拉页面的view */

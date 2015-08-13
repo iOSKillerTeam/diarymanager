@@ -30,7 +30,7 @@
     NSMutableArray* muarray;
 }
 -(void)viewDidLoad{
-    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.smallScrollView.showsHorizontalScrollIndicator = NO;
     self.smallScrollView.showsVerticalScrollIndicator = NO;
     
