@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F2B99051B6B14B3009564CD /* BSContentShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B99031B6B14B3009564CD /* BSContentShowController.m */; };
 		4F2B99061B6B14B3009564CD /* BSContentShowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B99041B6B14B3009564CD /* BSContentShowController.xib */; };
+		4F649DF61B7C189A00E07E96 /* BSWeekContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F649DF51B7C189A00E07E96 /* BSWeekContentView.m */; };
 		4F9BEC4A1B71D5FA0094B780 /* SKSplashIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BEC471B71D5FA0094B780 /* SKSplashIcon.m */; };
 		4F9BEC4B1B71D5FA0094B780 /* SKSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BEC491B71D5FA0094B780 /* SKSplashView.m */; };
 		4F9BEC4F1B71D8C00094B780 /* twitterIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BEC4D1B71D8C00094B780 /* twitterIcon.png */; };
@@ -141,6 +142,8 @@
 		4F2B99021B6B14B3009564CD /* BSContentShowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContentShowController.h; sourceTree = "<group>"; };
 		4F2B99031B6B14B3009564CD /* BSContentShowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContentShowController.m; sourceTree = "<group>"; };
 		4F2B99041B6B14B3009564CD /* BSContentShowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSContentShowController.xib; path = ../controller/BSContentShowController.xib; sourceTree = "<group>"; };
+		4F649DF41B7C189A00E07E96 /* BSWeekContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWeekContentView.h; sourceTree = "<group>"; };
+		4F649DF51B7C189A00E07E96 /* BSWeekContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSWeekContentView.m; sourceTree = "<group>"; };
 		4F9BEC461B71D5FA0094B780 /* SKSplashIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSplashIcon.h; sourceTree = "<group>"; };
 		4F9BEC471B71D5FA0094B780 /* SKSplashIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSplashIcon.m; sourceTree = "<group>"; };
 		4F9BEC481B71D5FA0094B780 /* SKSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSplashView.h; sourceTree = "<group>"; };
@@ -163,7 +166,7 @@
 		5318F5471B5DC09E0002B637 /* SXTitleLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SXTitleLable.h; path = ../controller/SXTitleLable.h; sourceTree = "<group>"; };
 		5318F5481B5DC09E0002B637 /* SXTitleLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SXTitleLable.m; path = ../controller/SXTitleLable.m; sourceTree = "<group>"; };
 		53482B7D1B2FC53500F85BB3 /* diarymanage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diarymanage.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		53482B811B2FC53500F85BB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		53482B811B2FC53500F85BB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53482B821B2FC53500F85BB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		53482B881B2FC53500F85BB3 /* diarymanage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = diarymanage.xcdatamodel; sourceTree = "<group>"; };
 		53482B8A1B2FC53500F85BB3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../ViewController.h; sourceTree = "<group>"; };
@@ -400,6 +403,7 @@
 				5368A3451B53469200652E95 /* tuisong.wav */,
 				53482BBD1B2FD09300F85BB3 /* images */,
 				53482B821B2FC53500F85BB3 /* main.m */,
+				53482B811B2FC53500F85BB3 /* Info.plist */,
 				5368A3621B5646A800652E95 /* PushConfig.plist */,
 			);
 			name = "Supporting Files";
@@ -549,7 +553,6 @@
 				53482BEF1B301A3200F85BB3 /* update.png */,
 				53482BA91B2FCA5C00F85BB3 /* weekday.png */,
 				53482BB11B2FCD6200F85BB3 /* toomore.png */,
-				53482B811B2FC53500F85BB3 /* Info.plist */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -699,6 +702,8 @@
 			children = (
 				53482C3F1B33EEF500F85BB3 /* BSWeekDiaryCell.h */,
 				53482C401B33EEF500F85BB3 /* BSWeekDiaryCell.m */,
+				4F649DF41B7C189A00E07E96 /* BSWeekContentView.h */,
+				4F649DF51B7C189A00E07E96 /* BSWeekContentView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -921,6 +926,11 @@
 				TargetAttributes = {
 					53482B7C1B2FC53500F85BB3 = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					53482B981B2FC53600F85BB3 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -1073,6 +1083,7 @@
 				5368A6221B38F89700093484 /* BSTaskTodoController.m in Sources */,
 				53482C1D1B31180900F85BB3 /* WeiboCell.m in Sources */,
 				4F9F19091B6CDC61003B000C /* BSWorkFlowInfo.m in Sources */,
+				4F649DF61B7C189A00E07E96 /* BSWeekContentView.m in Sources */,
 				53482C0C1B30697F00F85BB3 /* BSWeekViewController.m in Sources */,
 				53482BC51B2FD8FB00F85BB3 /* CHTumblrMenuView.m in Sources */,
 				53482B831B2FC53500F85BB3 /* main.m in Sources */,

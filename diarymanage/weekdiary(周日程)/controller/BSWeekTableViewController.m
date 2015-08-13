@@ -11,6 +11,7 @@
 #import "BSDiaryInfo.h"
 #import "TLAlertView.h"
 #import "TLDemoViewController.h"
+#import "BSWeekContentView.h"
 @interface BSWeekTableViewController ()<UIPickerViewDataSource,UIPickerViewDelegate>
 // 定义变量记录当前按钮的状态
 @property (nonatomic, assign, getter = isOpen) BOOL open;
@@ -108,8 +109,11 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    TLDemoViewController *demoVC = [[TLDemoViewController alloc] initWithNibName:@"TLDemoViewController" bundle:[NSBundle mainBundle]];
-    TLAlertView *alertView = [[TLAlertView alloc] initWithView:demoVC.view outsideClose:YES];
+   
+    BSWeekContentView *weekContentView = [BSWeekContentView bSWeekDiaryCell];
+    BSDiaryInfo* bsdiartInfo = [BSDiaryInfo bSDiaryInfoWithDict:_diarys[indexPath.row]];
+    weekContentView.bSDiaryInfo = bsdiartInfo;
+    TLAlertView *alertView = [[TLAlertView alloc] initWithView:weekContentView outsideClose:YES];
     [alertView show];
 }
 

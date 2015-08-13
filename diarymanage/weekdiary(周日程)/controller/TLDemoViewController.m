@@ -7,7 +7,7 @@
 //
 
 #import "TLDemoViewController.h"
-
+#import "BSWeekContentView.h"
 @interface TLDemoViewController ()
 
 @end
