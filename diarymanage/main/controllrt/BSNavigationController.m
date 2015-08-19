@@ -62,6 +62,7 @@
         [barItem setBackButtonBackgroundImage:pressedbackimage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     }
 }
+
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     //拿到目标控制器，设置它自动影藏TabBar
     viewController.hidesBottomBarWhenPushed = YES;
