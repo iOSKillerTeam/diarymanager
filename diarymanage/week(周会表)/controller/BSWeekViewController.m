@@ -13,6 +13,7 @@
 #import "WeiboCell.h"
 #import "WeiboInfo.h"
 #import "AFNetworking.h"
+#import "CommonFunc.h"
 #define WXCColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 @interface BSWeekViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *MeetingContentView;
@@ -38,27 +39,44 @@
     //1,创建请求管理者
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    params[@"user_id"] = @"liuzy";
-//    params[@"starttime"] = @"2014/9/1";
-//    params[@"endtime"] = @"2014/9/5";
+    //发送请求参数并加密
+    params[@"starttime"] = __BASE64([NSString stringWithFormat:@"2014/9/1"]);
+    params[@"endtime"] = __BASE64([NSString stringWithFormat:@"2014/9/5"]);
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:1];
     //发送请求
-    [manager GET:@"http://localhost:8080/Schedule/zact_WebService_tncnp01List.html" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
-       
+    [manager GET:@"http://192.168.80.56:8080/Schedule/zact_WebService_tncnp01List.html" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //返回数据成功后解密
+        NSDictionary *dict = [[NSDictionary alloc] init];
+        for (int i=0 ;i<[responseObject count] ;i++) {
+            NSString *name = __TEXT(responseObject[i][@"user_name"]);
+            NSString *startTime = __TEXT(responseObject[i][@"starttime"]);
+            NSString *endTime = __TEXT(responseObject[i][@"endtime"]);
+            NSString *editTime = __TEXT(responseObject[i][@"optime"]);
+            NSString *content = __TEXT(responseObject[i][@"title"]);
+            NSString *joinPeople = __TEXT(responseObject[i][@"content"]);
+            NSString *editPeople = __TEXT(responseObject[i][@"opuser"]);
+            NSString *other = __TEXT(responseObject[i][@"note"]);
+            
+            dict = @{@"icon":@"icon.png",@"name":name,@"startTime":startTime,@"endTime":endTime,@"editTime":editTime,@"content":content,@"joinPeople":joinPeople,@"editPeople":editPeople,@"other":other};
+            [array addObject:dict];
+        }
+        
+        muarray = [[NSMutableArray alloc] initWithCapacity:20];
+        for(int i=0;i<array.count;i++){
+            WeiboInfo* weibo = [[WeiboInfo alloc]initWithDictionary:array[i]];
+            [muarray addObject:weibo];
+        }
+        [self initTableViewMeeting];
+        [self addLable];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        NSLog(@"%@",error);
     }];
 
     
-    NSArray* array = @[@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"李志勇",@"startTime":@"2015年6月23日 09:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"职业技能鉴定国家题库（核工业分库）阶段性审查会",@"joinPeople":@"人力资源处，集团公司人力资源部级职业技能鉴定指导中心，题库建设专家组成员等",@"editPeople":@"李四",@"other":@"请大家准备好命题"},@{@"icon":@"icon.png",@"name":@"核安全局",@"startTime":@"2015年6月23日 13:30:00",@"endTime":@"2015年6月23日 15:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"秦三厂112大修核安全局临界检查后会议",@"joinPeople":@"方家山执照管理处邮件通知为主",@"editPeople":@"王五",@"other":@"请带好纸笔，会议期间不得接听电话"},@{@"icon":@"icon.png",@"name":@"张建成",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"王奇文",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"}];
-    muarray = [[NSMutableArray alloc] initWithCapacity:20];
-    for(int i=0;i<array.count;i++){
-        WeiboInfo* weibo = [[WeiboInfo alloc]initWithDictionary:array[i]];
-        [muarray addObject:weibo];
-    }
-    [self initTableViewMeeting];
-    [self addLable];
+//    NSArray* array = @[@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"李志勇",@"startTime":@"2015年6月23日 09:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"职业技能鉴定国家题库（核工业分库）阶段性审查会",@"joinPeople":@"人力资源处，集团公司人力资源部级职业技能鉴定指导中心，题库建设专家组成员等",@"editPeople":@"李四",@"other":@"请大家准备好命题"},@{@"icon":@"icon.png",@"name":@"核安全局",@"startTime":@"2015年6月23日 13:30:00",@"endTime":@"2015年6月23日 15:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"秦三厂112大修核安全局临界检查后会议",@"joinPeople":@"方家山执照管理处邮件通知为主",@"editPeople":@"王五",@"other":@"请带好纸笔，会议期间不得接听电话"},@{@"icon":@"icon.png",@"name":@"张建成",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"王奇文",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"}];
+    
+
 }
 -(void)initTableViewMeeting{
     _tableVieweeting = [[UITableView alloc]init];
@@ -67,7 +85,7 @@
     _tableVieweeting.backgroundColor = WXCColor(211, 211, 211);
     _tableVieweeting.allowsSelection = NO;//将CELL设置成不可选中
     _tableVieweeting.frame = CGRectMake(0, 0, self.view.width, self.view.height-_MeetingContentView.y);
-    NSLog(@"-----%f",_MeetingContentView.height);
+//    NSLog(@"-----%f",_MeetingContentView.height);
     [_MeetingContentView addSubview:_tableVieweeting];
 }
 

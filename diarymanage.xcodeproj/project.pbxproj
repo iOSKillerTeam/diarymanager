@@ -44,6 +44,7 @@
 		4FF9EB1F1B7445A6008A6958 /* ying2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FF9EB1D1B7445A6008A6958 /* ying2.png */; };
 		4FF9EB211B746E1A008A6958 /* bg3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4FF9EB201B746E1A008A6958 /* bg3.jpg */; };
 		5318F5491B5DC09E0002B637 /* SXTitleLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5318F5481B5DC09E0002B637 /* SXTitleLable.m */; };
+		53273F971B844F69002751F4 /* CommonFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 53273F961B844F69002751F4 /* CommonFunc.m */; };
 		53482B831B2FC53500F85BB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53482B821B2FC53500F85BB3 /* main.m */; };
 		53482B891B2FC53500F85BB3 /* diarymanage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53482B871B2FC53500F85BB3 /* diarymanage.xcdatamodeld */; };
 		53482B8C1B2FC53500F85BB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53482B8B1B2FC53500F85BB3 /* ViewController.m */; };
@@ -227,6 +228,8 @@
 		4FF9EB201B746E1A008A6958 /* bg3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg3.jpg; sourceTree = "<group>"; };
 		5318F5471B5DC09E0002B637 /* SXTitleLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SXTitleLable.h; path = ../controller/SXTitleLable.h; sourceTree = "<group>"; };
 		5318F5481B5DC09E0002B637 /* SXTitleLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SXTitleLable.m; path = ../controller/SXTitleLable.m; sourceTree = "<group>"; };
+		53273F951B844F69002751F4 /* CommonFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunc.h; sourceTree = "<group>"; };
+		53273F961B844F69002751F4 /* CommonFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunc.m; sourceTree = "<group>"; };
 		53482B7D1B2FC53500F85BB3 /* diarymanage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diarymanage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53482B811B2FC53500F85BB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53482B821B2FC53500F85BB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -473,6 +476,15 @@
 			path = ui;
 			sourceTree = "<group>";
 		};
+		53273F941B844F0F002751F4 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				53273F951B844F69002751F4 /* CommonFunc.h */,
+				53273F961B844F69002751F4 /* CommonFunc.m */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		53482B741B2FC53500F85BB3 = {
 			isa = PBXGroup;
 			children = (
@@ -678,6 +690,7 @@
 		53482BC11B2FD8C500F85BB3 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				53273F941B844F0F002751F4 /* Commons */,
 				4F6E5CA71B7DBA680020EE35 /* AFNetworking */,
 				4F6E5CBB1B7DBA680020EE35 /* MJExtension */,
 				4F9BEC451B71D5FA0094B780 /* SKSplashView */,
@@ -1203,6 +1216,7 @@
 				53482B891B2FC53500F85BB3 /* diarymanage.xcdatamodeld in Sources */,
 				4F6E5CD51B7DBA680020EE35 /* AFHTTPSessionManager.m in Sources */,
 				4F2B99051B6B14B3009564CD /* BSContentShowController.m in Sources */,
+				53273F971B844F69002751F4 /* CommonFunc.m in Sources */,
 				534D4F691B671AA1006253EB /* AppDelegate.m in Sources */,
 				53482C5A1B34567D00F85BB3 /* TLDemoViewController.m in Sources */,
 				4F6E5CDF1B7DBA680020EE35 /* MJIvar.m in Sources */,
