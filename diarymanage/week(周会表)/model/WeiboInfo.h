@@ -11,7 +11,7 @@
 @interface WeiboInfo : NSObject
 @property(strong,nonatomic) NSString* icon;
 @property(strong,nonatomic) NSString* name;
-@property(assign,nonatomic) NSString* startTime;
+@property(strong,nonatomic) NSString* startTime;
 @property(strong,nonatomic) NSString* endTime;
 @property(strong,nonatomic) NSString* editTime;
 @property(strong,nonatomic) NSString* content;
