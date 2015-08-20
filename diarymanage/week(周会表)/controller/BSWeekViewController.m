@@ -13,7 +13,7 @@
 #import "WeiboCell.h"
 #import "WeiboInfo.h"
 #import "AFNetworking.h"
-#import "CommonFunc.h"
+#import "GTMBase64.h"
 #define WXCColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 @interface BSWeekViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *MeetingContentView;
@@ -40,13 +40,15 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     //发送请求参数并加密
-    params[@"starttime"] = __BASE64([NSString stringWithFormat:@"2014/9/1"]);
-    params[@"endtime"] = __BASE64([NSString stringWithFormat:@"2014/9/5"]);
+    params[@"starttime"] = __BASE64([NSString stringWithFormat:@"2014-2-5"]);
+    params[@"endtime"] = __BASE64([NSString stringWithFormat:@"2014-12-1"]);
+    params[@"nameid"] = __BASE64([NSString stringWithFormat:@"wgang"]);
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:1];
     //发送请求
-    [manager GET:@"http://192.168.80.56:8080/Schedule/zact_WebService_tncnp01List.html" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://61.164.205.27:8880/Schedule/zact_WebService_tncnpZycList.html" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //返回数据成功后解密
         NSDictionary *dict = [[NSDictionary alloc] init];
+        NSLog(@"----%lu",(unsigned long)[responseObject count]);
         for (int i=0 ;i<[responseObject count] ;i++) {
             NSString *name = __TEXT(responseObject[i][@"user_name"]);
             NSString *startTime = __TEXT(responseObject[i][@"starttime"]);
