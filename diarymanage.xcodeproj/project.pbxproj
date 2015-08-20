@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4F2B99051B6B14B3009564CD /* BSContentShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2B99031B6B14B3009564CD /* BSContentShowController.m */; };
 		4F2B99061B6B14B3009564CD /* BSContentShowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2B99041B6B14B3009564CD /* BSContentShowController.xib */; };
-		4F4B0D3D1B84D15A0050BE43 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4B0D3C1B84D15A0050BE43 /* Reveal.framework */; };
 		4F649DF61B7C189A00E07E96 /* BSWeekContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F649DF51B7C189A00E07E96 /* BSWeekContentView.m */; };
 		4F6E5CD31B7DBA680020EE35 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E5CA91B7DBA680020EE35 /* AFHTTPRequestOperation.m */; };
 		4F6E5CD41B7DBA680020EE35 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E5CAB1B7DBA680020EE35 /* AFHTTPRequestOperationManager.m */; };
@@ -163,7 +162,6 @@
 		4F2B99021B6B14B3009564CD /* BSContentShowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContentShowController.h; sourceTree = "<group>"; };
 		4F2B99031B6B14B3009564CD /* BSContentShowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContentShowController.m; sourceTree = "<group>"; };
 		4F2B99041B6B14B3009564CD /* BSContentShowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSContentShowController.xib; path = ../controller/BSContentShowController.xib; sourceTree = "<group>"; };
-		4F4B0D3C1B84D15A0050BE43 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		4F649DF41B7C189A00E07E96 /* BSWeekContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWeekContentView.h; sourceTree = "<group>"; };
 		4F649DF51B7C189A00E07E96 /* BSWeekContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSWeekContentView.m; sourceTree = "<group>"; };
 		4F6E5CA81B7DBA680020EE35 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -370,7 +368,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5368A3611B5645F300652E95 /* libz.dylib in Frameworks */,
-				4F4B0D3D1B84D15A0050BE43 /* Reveal.framework in Frameworks */,
 				5368A35F1B5645DB00652E95 /* Security.framework in Frameworks */,
 				5368A35D1B5645D000652E95 /* UIKit.framework in Frameworks */,
 				534D4F701B671BCE006253EB /* libPushSDK-1.8.3.a in Frameworks */,
@@ -681,7 +678,6 @@
 		53482BC11B2FD8C500F85BB3 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				4F4B0D3C1B84D15A0050BE43 /* Reveal.framework */,
 				4F6E5CA71B7DBA680020EE35 /* AFNetworking */,
 				4F6E5CBB1B7DBA680020EE35 /* MJExtension */,
 				4F9BEC451B71D5FA0094B780 /* SKSplashView */,
