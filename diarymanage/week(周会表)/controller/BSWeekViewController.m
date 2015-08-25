@@ -13,16 +13,13 @@
 #import "WeiboCell.h"
 #import "WeiboInfo.h"
 #import "AFNetworking.h"
-#import "GTMBase64.h"
+#import "SecurityUtil.h"
+#import "MJRefresh.h"
 #define WXCColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 @interface BSWeekViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *MeetingContentView;
 @property (strong,nonatomic) UITableView *tableVieweeting;
 @property (weak, nonatomic) IBOutlet UIScrollView *smallScrollView;
-//@property (weak, nonatomic) IBOutlet UIView *AdministrationConference;
-//@property (weak, nonatomic) IBOutlet UIView *specialWork;
-//@property (weak, nonatomic) IBOutlet UIView *partyMeeting;
-//@property (weak, nonatomic) IBOutlet UIView *productMeeting;
 @property (strong,nonatomic) NSString* tittleName;
 @property (strong,nonatomic) NSString* btnTag;
 @end
@@ -30,12 +27,28 @@
 @implementation BSWeekViewController{
     float rowHeight;//用来取每行动态的行高
     NSMutableArray* muarray;
+    int pageNum;
 }
 -(void)viewDidLoad{
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.smallScrollView.showsHorizontalScrollIndicator = NO;
     self.smallScrollView.showsVerticalScrollIndicator = NO;
+    [self.tableVieweeting addFooterWithTarget:self action:@selector(loadMoreWeekInfo)];
+    [self.tableVieweeting addHeaderWithTarget:self action:@selector(roadWeekInfo)];
+    [self roadWeekInfo];
+}
 
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+//    UIView *footView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 50)];
+//    footView.backgroundColor = [UIColor greenColor];
+//    return footView;
+//}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+//    return 50;
+//}
+
+-(void)loadMoreWeekInfo{
+    pageNum+=1;
     //1,创建请求管理者
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -43,6 +56,58 @@
     params[@"starttime"] = __BASE64([NSString stringWithFormat:@"2014-2-5"]);
     params[@"endtime"] = __BASE64([NSString stringWithFormat:@"2014-12-1"]);
     params[@"nameid"] = __BASE64([NSString stringWithFormat:@"wgang"]);
+    NSString *page = [NSString stringWithFormat:@"%d",pageNum];
+    NSLog(@"-----%@-----",page);
+    params[@"pageNum"] = __BASE64(page);
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:1];
+    //发送请求
+    [manager GET:@"http://61.164.205.27:8880/Schedule/zact_WebService_tncnpZycList.html" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //返回数据成功后解密
+        NSDictionary *dict = [[NSDictionary alloc] init];
+        NSLog(@"----%lu",(unsigned long)[responseObject count]);
+        for (int i=0 ;i<[responseObject count] ;i++) {
+            NSString *name = __TEXT(responseObject[i][@"user_name"]);
+            NSString *startTime = __TEXT(responseObject[i][@"starttime"]);
+            NSString *endTime = __TEXT(responseObject[i][@"endtime"]);
+            NSString *editTime = __TEXT(responseObject[i][@"optime"]);
+            NSString *content = __TEXT(responseObject[i][@"title"]);
+            NSString *joinPeople = __TEXT(responseObject[i][@"content"]);
+            NSString *editPeople = __TEXT(responseObject[i][@"opuser"]);
+            NSString *other = __TEXT(responseObject[i][@"note"]);
+            
+            dict = @{@"icon":@"icon.png",@"name":name,@"startTime":startTime,@"endTime":endTime,@"editTime":editTime,@"content":content,@"joinPeople":joinPeople,@"editPeople":editPeople,@"other":other};
+            [array addObject:dict];
+        }
+        
+        NSMutableArray *moreweekinfos = [[NSMutableArray alloc] initWithCapacity:20];
+        for(int i=0;i<array.count;i++){
+            WeiboInfo* weibo = [[WeiboInfo alloc]initWithDictionary:array[i]];
+            [moreweekinfos addObject:weibo];
+        }
+        [muarray addObjectsFromArray:moreweekinfos];
+        // 刷新表格
+        [_tableVieweeting reloadData];
+
+        // 结束刷新(隐藏footer)
+        self.tableVieweeting.tableFooterView.hidden = YES;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+-(void)roadWeekInfo{
+    //1,创建请求管理者
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    //发送请求参数并加密
+    params[@"starttime"] = __BASE64([NSString stringWithFormat:@"2014-2-5"]);
+    params[@"endtime"] = __BASE64([NSString stringWithFormat:@"2014-12-1"]);
+    params[@"nameid"] = __BASE64([NSString stringWithFormat:@"wgang"]);
+    pageNum = 1;
+    NSString *page = [NSString stringWithFormat:@"%d",pageNum];
+    NSLog(@"+++%@+++",page);
+    params[@"pageNum"] = __BASE64(page);
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:1];
     //发送请求
     [manager GET:@"http://61.164.205.27:8880/Schedule/zact_WebService_tncnpZycList.html" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -70,16 +135,12 @@
         }
         [self initTableViewMeeting];
         [self addLable];
-
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",error);
     }];
-
-    
-//    NSArray* array = @[@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"李志勇",@"startTime":@"2015年6月23日 09:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"职业技能鉴定国家题库（核工业分库）阶段性审查会",@"joinPeople":@"人力资源处，集团公司人力资源部级职业技能鉴定指导中心，题库建设专家组成员等",@"editPeople":@"李四",@"other":@"请大家准备好命题"},@{@"icon":@"icon.png",@"name":@"核安全局",@"startTime":@"2015年6月23日 13:30:00",@"endTime":@"2015年6月23日 15:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"秦三厂112大修核安全局临界检查后会议",@"joinPeople":@"方家山执照管理处邮件通知为主",@"editPeople":@"王五",@"other":@"请带好纸笔，会议期间不得接听电话"},@{@"icon":@"icon.png",@"name":@"张建成",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"王奇文",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"},@{@"icon":@"icon.png",@"name":@"张涛",@"startTime":@"2015年6月23日 9:30:00",@"endTime":@"2015年6月23日 11:30:00",@"editTime":@"2015-04-01 11:12",@"content":@"讨论关于日程APP设计问题，并给出好的意见和建议",@"joinPeople":@"信息项目处，张涛，张建成，培训管理处，公司分管领导，张三，李四，王五，保健物理处，维修二处",@"editPeople":@"张三",@"other":@"会议期间请大家关闭手机，并认真做好会议记录"}];
-    
-
 }
+
 -(void)initTableViewMeeting{
     _tableVieweeting = [[UITableView alloc]init];
     _tableVieweeting.delegate = self;
@@ -163,7 +224,6 @@
     self.smallScrollView.contentSize = CGSizeMake(70 * 7, 0);
     
 }
-
 
 /** 标题栏label的点击事件 */
 - (void)lblClick:(UITapGestureRecognizer *)recognizer

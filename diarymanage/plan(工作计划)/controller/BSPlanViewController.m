@@ -12,6 +12,7 @@
 #import "UIView+Extension.h"
 #import "WeiboInfo.h"
 #import "WeiboCell.h"
+#import "MJRefresh.h"
 #define WXCColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 // 正文字体
 #define HWStatusCellContentFont [UIFont systemFontOfSize:14]
