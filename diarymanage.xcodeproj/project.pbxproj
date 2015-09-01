@@ -39,7 +39,6 @@
 		4F9C77711B9187A900787352 /* default-head@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C776F1B9187A900787352 /* default-head@2x.png */; };
 		4F9C77731B9188AA00787352 /* login_input_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C77721B9188AA00787352 /* login_input_field.png */; };
 		4F9C77751B918B3100787352 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C77741B918B3100787352 /* OK.png */; };
-		4F9C777E1B918DC100787352 /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C777D1B918DC100787352 /* BSLoginViewController.m */; };
 		4F9E49F31B6D9C7700850390 /* WorkFlowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E49F21B6D9C7700850390 /* WorkFlowButton.m */; };
 		4F9F19091B6CDC61003B000C /* BSWorkFlowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F19081B6CDC61003B000C /* BSWorkFlowInfo.m */; };
 		4FC1FCD31B860F8200C180C4 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC1FCCB1B860F8200C180C4 /* GTMBase64.m */; };
@@ -135,6 +134,7 @@
 		5352D61F1B3A911200FA2FD0 /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 5352D61A1B3A911200FA2FD0 /* MBProgressHUD+NJ.m */; };
 		5352D6201B3A911200FA2FD0 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5352D61B1B3A911200FA2FD0 /* MBProgressHUD.bundle */; };
 		5352D6211B3A911200FA2FD0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5352D61D1B3A911200FA2FD0 /* MBProgressHUD.m */; };
+		535FBB2D1B95F5540042854D /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 535FBB2C1B95F5540042854D /* BSLoginViewController.m */; };
 		5368A3461B53469200652E95 /* tuisong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5368A3451B53469200652E95 /* tuisong.wav */; };
 		5368A3511B56458900652E95 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5368A3501B56458900652E95 /* CFNetwork.framework */; };
 		5368A3531B56459400652E95 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5368A3521B56459400652E95 /* CoreFoundation.framework */; };
@@ -234,7 +234,6 @@
 		4F9C776F1B9187A900787352 /* default-head@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-head@2x.png"; sourceTree = "<group>"; };
 		4F9C77721B9188AA00787352 /* login_input_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_input_field.png; sourceTree = "<group>"; };
 		4F9C77741B918B3100787352 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
-		4F9C777D1B918DC100787352 /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginViewController.m; path = ../model/BSLoginViewController.m; sourceTree = "<group>"; };
 		4F9E49F11B6D9C7700850390 /* WorkFlowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkFlowButton.h; path = ../controller/WorkFlowButton.h; sourceTree = "<group>"; };
 		4F9E49F21B6D9C7700850390 /* WorkFlowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkFlowButton.m; path = ../controller/WorkFlowButton.m; sourceTree = "<group>"; };
 		4F9F19071B6CDC60003B000C /* BSWorkFlowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWorkFlowInfo.h; sourceTree = "<group>"; };
@@ -376,6 +375,8 @@
 		5352D61B1B3A911200FA2FD0 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		5352D61C1B3A911200FA2FD0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		5352D61D1B3A911200FA2FD0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		535FBB2B1B95F5540042854D /* BSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLoginViewController.h; sourceTree = "<group>"; };
+		535FBB2C1B95F5540042854D /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLoginViewController.m; sourceTree = "<group>"; };
 		5368A3451B53469200652E95 /* tuisong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tuisong.wav; sourceTree = "<group>"; };
 		5368A3501B56458900652E95 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5368A3521B56459400652E95 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -596,6 +597,7 @@
 		53482B7F1B2FC53500F85BB3 /* diarymanage */ = {
 			isa = PBXGroup;
 			children = (
+				535FBB291B95F5540042854D /* login(登陆) */,
 				5368A61A1B38F50D00093484 /* tasktodo(任务督办) */,
 				5368A6151B38F4AB00093484 /* more(更多) */,
 				53482C2F1B33142200F85BB3 /* weekdiary(周日程) */,
@@ -986,6 +988,23 @@
 			path = category;
 			sourceTree = "<group>";
 		};
+		535FBB291B95F5540042854D /* login(登陆) */ = {
+			isa = PBXGroup;
+			children = (
+				535FBB2A1B95F5540042854D /* Controller */,
+			);
+			path = "login(登陆)";
+			sourceTree = "<group>";
+		};
+		535FBB2A1B95F5540042854D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				535FBB2B1B95F5540042854D /* BSLoginViewController.h */,
+				535FBB2C1B95F5540042854D /* BSLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		5368A6151B38F4AB00093484 /* more(更多) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1295,7 +1314,7 @@
 				5328A55B1B8EAB8B004DB3AA /* MJRefreshBaseView.m in Sources */,
 				53482BFD1B30592800F85BB3 /* BSTabBarController.m in Sources */,
 				534D4F731B672263006253EB /* UIView+Extension.m in Sources */,
-				4F9C777E1B918DC100787352 /* BSLoginViewController.m in Sources */,
+				535FBB2D1B95F5540042854D /* BSLoginViewController.m in Sources */,
 				5318F5491B5DC09E0002B637 /* SXTitleLable.m in Sources */,
 				53482BC01B2FD0F400F85BB3 /* BSPlanViewController.m in Sources */,
 				4F9BEC4B1B71D5FA0094B780 /* SKSplashView.m in Sources */,
