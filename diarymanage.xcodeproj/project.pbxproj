@@ -36,6 +36,11 @@
 		4F9BEC531B71EF920094B780 /* cnnpytly.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BEC521B71EF920094B780 /* cnnpytly.png */; };
 		4F9BEC581B71F6420094B780 /* BSWeekDiaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BEC561B71F6420094B780 /* BSWeekDiaryCell.xib */; };
 		4F9BEC591B71F6420094B780 /* TLDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BEC571B71F6420094B780 /* TLDemoViewController.xib */; };
+		4F9C77701B9187A900787352 /* default-head.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C776E1B9187A900787352 /* default-head.png */; };
+		4F9C77711B9187A900787352 /* default-head@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C776F1B9187A900787352 /* default-head@2x.png */; };
+		4F9C77731B9188AA00787352 /* login_input_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C77721B9188AA00787352 /* login_input_field.png */; };
+		4F9C77751B918B3100787352 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C77741B918B3100787352 /* OK.png */; };
+		4F9C777E1B918DC100787352 /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C777D1B918DC100787352 /* BSLoginViewController.m */; };
 		4F9E49F31B6D9C7700850390 /* WorkFlowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E49F21B6D9C7700850390 /* WorkFlowButton.m */; };
 		4F9F19091B6CDC61003B000C /* BSWorkFlowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F19081B6CDC61003B000C /* BSWorkFlowInfo.m */; };
 		4FC1FCD31B860F8200C180C4 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC1FCCB1B860F8200C180C4 /* GTMBase64.m */; };
@@ -226,6 +231,12 @@
 		4F9BEC521B71EF920094B780 /* cnnpytly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cnnpytly.png; sourceTree = "<group>"; };
 		4F9BEC561B71F6420094B780 /* BSWeekDiaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSWeekDiaryCell.xib; sourceTree = "<group>"; };
 		4F9BEC571B71F6420094B780 /* TLDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLDemoViewController.xib; sourceTree = "<group>"; };
+		4F9C776E1B9187A900787352 /* default-head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-head.png"; sourceTree = "<group>"; };
+		4F9C776F1B9187A900787352 /* default-head@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-head@2x.png"; sourceTree = "<group>"; };
+		4F9C77721B9188AA00787352 /* login_input_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_input_field.png; sourceTree = "<group>"; };
+		4F9C77741B918B3100787352 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
+		4F9C777C1B918DC100787352 /* BSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoginViewController.h; path = ../model/BSLoginViewController.h; sourceTree = "<group>"; };
+		4F9C777D1B918DC100787352 /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginViewController.m; path = ../model/BSLoginViewController.m; sourceTree = "<group>"; };
 		4F9E49F11B6D9C7700850390 /* WorkFlowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkFlowButton.h; path = ../controller/WorkFlowButton.h; sourceTree = "<group>"; };
 		4F9E49F21B6D9C7700850390 /* WorkFlowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkFlowButton.m; path = ../controller/WorkFlowButton.m; sourceTree = "<group>"; };
 		4F9F19071B6CDC60003B000C /* BSWorkFlowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWorkFlowInfo.h; sourceTree = "<group>"; };
@@ -587,6 +598,7 @@
 		53482B7F1B2FC53500F85BB3 /* diarymanage */ = {
 			isa = PBXGroup;
 			children = (
+				4F9C77761B918C7E00787352 /* login(登陆) */,
 				5368A61A1B38F50D00093484 /* tasktodo(任务督办) */,
 				5368A6151B38F4AB00093484 /* more(更多) */,
 				53482C2F1B33142200F85BB3 /* weekdiary(周日程) */,
@@ -725,6 +737,10 @@
 		53482BBD1B2FD09300F85BB3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4F9C77741B918B3100787352 /* OK.png */,
+				4F9C77721B9188AA00787352 /* login_input_field.png */,
+				4F9C776E1B9187A900787352 /* default-head.png */,
+				4F9C776F1B9187A900787352 /* default-head@2x.png */,
 				4FF9EB201B746E1A008A6958 /* bg3.jpg */,
 				4FF9EB1C1B7445A6008A6958 /* ying.png */,
 				4FF9EB1D1B7445A6008A6958 /* ying2.png */,
@@ -1183,15 +1199,18 @@
 				5352D6011B39899F00FA2FD0 /* round2.png in Resources */,
 				5352D6051B398A1F00FA2FD0 /* round4.png in Resources */,
 				53482BEC1B30158800F85BB3 /* tongji.png in Resources */,
+				4F9C77731B9188AA00787352 /* login_input_field.png in Resources */,
 				53482BEE1B3016DE00F85BB3 /* shiyongshouce.png in Resources */,
 				53482BB01B2FCCF000F85BB3 /* control.png in Resources */,
 				5368A6291B38F93800093484 /* TaskToCell.xib in Resources */,
+				4F9C77751B918B3100787352 /* OK.png in Resources */,
 				4FF9EB1E1B7445A6008A6958 /* ying.png in Resources */,
 				5368A60A1B38514300093484 /* post_type_bubble_product@2x.png in Resources */,
 				53482C2C1B330C5C00F85BB3 /* zxgz.png in Resources */,
 				53482C221B31D7F600F85BB3 /* icon.png in Resources */,
 				5368A6041B384FBC00093484 /* post_type_bubble_travel@2x.png in Resources */,
 				53482BE61B2FD93E00F85BB3 /* post_type_bubble_video@2x.png in Resources */,
+				4F9C77711B9187A900787352 /* default-head@2x.png in Resources */,
 				53482BB21B2FCD6200F85BB3 /* toomore.png in Resources */,
 				53482BE01B2FD93E00F85BB3 /* post_type_bubble_photo@2x.png in Resources */,
 				5368A6001B384E8300093484 /* post_type_bubble_more@2x.png in Resources */,
@@ -1279,6 +1298,7 @@
 				5328A55B1B8EAB8B004DB3AA /* MJRefreshBaseView.m in Sources */,
 				53482BFD1B30592800F85BB3 /* BSTabBarController.m in Sources */,
 				534D4F731B672263006253EB /* UIView+Extension.m in Sources */,
+				4F9C777E1B918DC100787352 /* BSLoginViewController.m in Sources */,
 				5318F5491B5DC09E0002B637 /* SXTitleLable.m in Sources */,
 				53482BC01B2FD0F400F85BB3 /* BSPlanViewController.m in Sources */,
 				4F9BEC4B1B71D5FA0094B780 /* SKSplashView.m in Sources */,
@@ -1450,6 +1470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/diarymanage/main/lib",
@@ -1474,6 +1495,7 @@
 					Reveal,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1481,6 +1503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/diarymanage/main/lib",
