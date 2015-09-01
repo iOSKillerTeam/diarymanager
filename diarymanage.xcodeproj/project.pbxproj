@@ -36,7 +36,6 @@
 		4F9BEC531B71EF920094B780 /* cnnpytly.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BEC521B71EF920094B780 /* cnnpytly.png */; };
 		4F9BEC581B71F6420094B780 /* BSWeekDiaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BEC561B71F6420094B780 /* BSWeekDiaryCell.xib */; };
 		4F9BEC591B71F6420094B780 /* TLDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BEC571B71F6420094B780 /* TLDemoViewController.xib */; };
-		4F9C77701B9187A900787352 /* default-head.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C776E1B9187A900787352 /* default-head.png */; };
 		4F9C77711B9187A900787352 /* default-head@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C776F1B9187A900787352 /* default-head@2x.png */; };
 		4F9C77731B9188AA00787352 /* login_input_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C77721B9188AA00787352 /* login_input_field.png */; };
 		4F9C77751B918B3100787352 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C77741B918B3100787352 /* OK.png */; };
@@ -235,7 +234,6 @@
 		4F9C776F1B9187A900787352 /* default-head@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-head@2x.png"; sourceTree = "<group>"; };
 		4F9C77721B9188AA00787352 /* login_input_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_input_field.png; sourceTree = "<group>"; };
 		4F9C77741B918B3100787352 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
-		4F9C777C1B918DC100787352 /* BSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoginViewController.h; path = ../model/BSLoginViewController.h; sourceTree = "<group>"; };
 		4F9C777D1B918DC100787352 /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginViewController.m; path = ../model/BSLoginViewController.m; sourceTree = "<group>"; };
 		4F9E49F11B6D9C7700850390 /* WorkFlowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkFlowButton.h; path = ../controller/WorkFlowButton.h; sourceTree = "<group>"; };
 		4F9E49F21B6D9C7700850390 /* WorkFlowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkFlowButton.m; path = ../controller/WorkFlowButton.m; sourceTree = "<group>"; };
@@ -598,7 +596,6 @@
 		53482B7F1B2FC53500F85BB3 /* diarymanage */ = {
 			isa = PBXGroup;
 			children = (
-				4F9C77761B918C7E00787352 /* login(登陆) */,
 				5368A61A1B38F50D00093484 /* tasktodo(任务督办) */,
 				5368A6151B38F4AB00093484 /* more(更多) */,
 				53482C2F1B33142200F85BB3 /* weekdiary(周日程) */,
